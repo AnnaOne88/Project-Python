@@ -1,32 +1,24 @@
+#This is a template. It is using a DICTIONARY defined below. There are many other ways to revise, but lets start with something!
+
 import random
 
 
 def revise_vocabulary(vocabulary):
     """
     Function to revise vocabulary in a foreign language.
-
-    Parameters:
-    - vocabulary: a dictionary where keys are words in English and values are their meanings in Chinese.
+    This function has one parameter:vocabulary. This param is a dictionary where keys are words in English and values are their meanings in Chinese.
     """
-    # Create a list of English words from the keys of the vocabulary dictionary.
-    words = list(vocabulary.keys())
+    
+    words = list(vocabulary.keys())    # Create a list of English words from the keys of the vocabulary dictionary.
 
-    # Shuffle the order of English words for a varied quiz experience.
-    random.shuffle(words)
+    random.shuffle(words)    # Shuffle the order of English words for a varied quiz experience.
 
     # Iterate through each English word in the shuffled list.
     for word in words:
-        # Print a prompt asking for the meaning of the current English word.
-        print(f"What is '{word}' in Chinese?")
-
-        # Take user input for the meaning of the current English word.
-        user_input = input("Your answer: ").strip()
-
-        # Retrieve the correct meaning (in Chinese) of the current English word.
-        correct_answer = vocabulary[word]
-
-        # Check if the user's input matches the correct meaning and provide feedback.
-        if user_input == correct_answer:
+        print(f"What is '{word}' in Chinese?")        # Print a prompt asking for the meaning of the current English word. The 'f' before the string indicates the use of an f-string in Python. F-strings, or formatted string literals, were introduced in Python 3.6. They provide a concise and convenient way to embed expressions inside string literals, using curly braces {} to enclose the expressions.
+        user_input = input("Your answer: ").strip()   # Take user input for the meaning of the current English word.
+        correct_answer = vocabulary[word]             # Retrieve the correct meaning (in Chinese) of the current English word.
+        if user_input == correct_answer:              # Check if the user's input matches the correct meaning and provide feedback.
             print("Correct! ✔️\n")
         else:
             print(f"Wrong. The correct answer is: '{correct_answer}'. ❌\n")
