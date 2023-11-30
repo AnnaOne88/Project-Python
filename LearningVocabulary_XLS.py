@@ -1,7 +1,7 @@
 import openpyxl
 import random
 
-#STEP 1: create a function that will read XLS file and create a dictionary of EN-CN pairs.
+#STEP 1: create a function that will read XLS file and create a dictionary of EN-ZH pairs.
 # Later, we can keep these 'unnecessary' steps in comment mode.
 
 def read_xlsx(path):
