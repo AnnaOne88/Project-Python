@@ -16,7 +16,7 @@ def revise_vocabulary(vocabulary):
     # Iterate through each English word in the shuffled list.
     for word in words:
         print(f"What is '{word}' in Chinese?")        # Print a prompt asking for the meaning of the current English word. The 'f' before the string indicates the use of an f-string in Python. F-strings, or formatted string literals, were introduced in Python 3.6. They provide a concise and convenient way to embed expressions inside string literals, using curly braces {} to enclose the expressions.
-        user_input = input("Your answer: ").strip()   # Take user input for the meaning of the current English word.
+        user_input = input("Your answer: ").strip()   # Take user input for the meaning of the current English word. --- .strip() removes white spaces from the input.
         correct_answer = vocabulary[word]             # Retrieve the correct meaning (in Chinese) of the current English word.
         if user_input == correct_answer:              # Check if the user's input matches the correct meaning and provide feedback.
             print("Correct! ✔️\n")
