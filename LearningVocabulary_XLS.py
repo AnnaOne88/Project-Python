@@ -16,7 +16,7 @@ def read_xlsx(path):
 
     return word_dictionary
 
-path = 'C:/Users/Uzivatel/Downloads/vocabulary-list.xlsx' # the path to your XLSX file
+path = './vocabulary-list.xlsx' # the path to your XLSX file
 
 word_dict = read_xlsx(path) # Read the XLSX file and create a dictionary
 
