@@ -10,7 +10,7 @@ def read_xlsx(path):
     word_dictionary = {}  # Dictionary to store English-Chinese words
 
     for row in sheet.iter_rows(min_row=2, values_only=True):
-        english_word, chinese_words_str = row
+        english_word, chinese_words_str = row   #Changing chinese_word to chinese_words_str, because in our updated vocabulary list, the second column is a string containing more entries separated with commas.
 
         # Add a check for None before splitting
         if chinese_words_str is not None:
