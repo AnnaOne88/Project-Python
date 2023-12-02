@@ -56,8 +56,11 @@ for word in words:
     if user_input in correct_answers:
         correctNum+=1
         sum+=1
-        print(f"Correct! ✔️ correctNum={correctNum},wrongNum={wrongNum},sum={sum}\n")
+        print(f"Correct! ✔️ Correct: {correctNum}, Wrong: {wrongNum}, Total revised: {sum}\n")
     else:
         wrongNum+=1
         sum+=1
-        print(f"Wrong. The correct answers are: {', '.join(correct_answers)}. ❌, correctNum={correctNum},wrongNum={wrongNum},sum={sum}\n")
+        print(f"Wrong. The correct answers are: {', '.join(correct_answers)}. ❌, Correct: {correctNum}, Wrong: {wrongNum}, Total revised: {sum}\n")
+
+percentage_correct = correctNum/sum*100
+print(f"Your success rate is: {percentage_correct}% correct ({correctNum} out of {sum}) ")
