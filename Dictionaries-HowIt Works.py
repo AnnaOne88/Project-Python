@@ -1,7 +1,9 @@
-#split() function:
-sentence = "this is a sample."
+#split() and strip() functions:
+sentence = " This is a sample.   "
 words = sentence.split(" ")
 print(words)
+print(sentence)
+print(sentence.strip())
 
 #working with a dictionary
 dict = {
