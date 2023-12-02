@@ -26,7 +26,7 @@ def read_xlsx(path):
 
     return word_dictionary_filtered
 
-path = './vocabulary-list.xlsx' # The path to our XLSX
+path = './vocabulary-list-extended.xlsx' # The path to our XLSX
 
 word_dict = read_xlsx(path)  # Read the XLSX file and create a dictionary
 
@@ -43,6 +43,9 @@ print("\nRandom Word:" f" {random_english_word} - {random_chinese_words} \n")  #
 # STEP 4: Create a list of English words from the keys of the vocabulary dictionary.
 words = list(word_dict.keys())
 
+sum =0 
+correctNum = 0
+wrongNum = 0
 # Print a prompt asking for the meaning of the current English word.
 for word in words:
     print(f"What is '{word}' in Chinese?")
@@ -51,6 +54,10 @@ for word in words:
 
     # Check if the user's input matches any of the correct meanings and provide feedback.
     if user_input in correct_answers:
-        print("Correct! ✔️\n")
+        correctNum+=1
+        sum+=1
+        print(f"Correct! ✔️ correctNum={correctNum},wrongNum={wrongNum},sum={sum}\n")
     else:
-        print(f"Wrong. The correct answers are: {', '.join(correct_answers)}. ❌\n")
+        wrongNum+=1
+        sum+=1
+        print(f"Wrong. The correct answers are: {', '.join(correct_answers)}. ❌, correctNum={correctNum},wrongNum={wrongNum},sum={sum}\n")
