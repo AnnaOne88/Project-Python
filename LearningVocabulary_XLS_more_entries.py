@@ -31,36 +31,45 @@ path = './vocabulary-list-extended.xlsx' # The path to our XLSX
 word_dict = read_xlsx(path)  # Read the XLSX file and create a dictionary
 
 # Print the filtered dictionary to check
-print("Filtered EN-ZH Dictionary:")
+'''print("Filtered EN-ZH Dictionary:")
 for english_word, chinese_words in word_dict.items():
     print(f"{english_word}: {chinese_words}")
 
 # STEP 3: Let's choose a random key-value pair from the dictionary
 random_pair = random.choice(list(word_dict.items()))
 random_english_word, random_chinese_words = random_pair
-print("\nRandom Word:" f" {random_english_word} - {random_chinese_words} \n")  # This format can be changed
+print("\nRandom Word:" f" {random_english_word} - {random_chinese_words} \n")  # This format can be changed'''
+
+word_dict_reduced = word_dict.copy()          #making a copy of the original dict - in case we want to do more rounds of revision. We dont want the original vocabulary list affected...
 
 # STEP 4: Create a list of English words from the keys of the vocabulary dictionary.
-words = list(word_dict.keys())
+words = list(word_dict_reduced.keys())
+repetitions = 3    # set how many words we will revise
 
 sum =0 
 correctNum = 0
 wrongNum = 0
-# Print a prompt asking for the meaning of the current English word.
-for word in words:
-    print(f"What is '{word}' in Chinese?")
-    user_input = input("Your answer: ").strip()  # Take user input for the meaning of the current English word. --- .strip() removes white spaces from the input.
-    correct_answers = word_dict[word]  # Retrieve the correct meanings (in Chinese) of the current English word.
+wrong_answers = [] #this list will record which word the user didnt answer correctly
 
-    # Check if the user's input matches any of the correct meanings and provide feedback.
+for i in range(repetitions):
+    random_english_word = random.choice(words)
+    print(f"What is '{random_english_word}' in Chinese?")
+    user_input = input("Your answer: ").strip()
+
+    correct_answers = word_dict_reduced[random_english_word]
+
+    words.remove(random_english_word)
+
     if user_input in correct_answers:
-        correctNum+=1
-        sum+=1
+        correctNum += 1
+        sum += 1
         print(f"Correct! ✔️ Correct: {correctNum}, Wrong: {wrongNum}, Total revised: {sum}\n")
     else:
-        wrongNum+=1
-        sum+=1
+        wrongNum += 1
+        sum += 1
         print(f"Wrong. The correct answers are: {', '.join(correct_answers)}. ❌, Correct: {correctNum}, Wrong: {wrongNum}, Total revised: {sum}\n")
+        wrong_answers.append((random_english_word, correct_answers))
 
 percentage_correct = correctNum/sum*100
-print(f"Your success rate is: {percentage_correct}% correct ({correctNum} out of {sum}) ")
+print(f"Your success rate is: {percentage_correct:.2f}% correct ({correctNum} out of {sum}) ") #formatting this to 2 decimal places
+print('Wrong answers:', wrong_answers)
