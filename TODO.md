@@ -12,4 +12,4 @@
 ### 10. Right now, the revision part will iterate through all items in our list. Every time in the same order. starting from 1st row and finishing with the last row. We need to 1] randomize the words, 2] only select e.g. 5 words to revise (because if the list gets too long, we dont want to go through ALL the words each time we revise) ✔
 ### 11. After 'What is XY in Chinese?', we should reverse the format to 'What is XY in English'. Do 5 revisions into each language, randomly selected from the dictionary keys/values respectively.
 ### 12. Do some testing: add to the XLS one line with only EN word, and one line with only ZH word. Run to see what happens.
-### 13. modify LearningSQlite3: the script now creates a database and adds 3 words. CAREFUL: each time you run the script, the db gets updated and 3 more rows are added each time you run it. ✔
+### 13. modify LearningSQlite3.py: the script now creates a database and adds 3 words. CAREFUL: the first time you run this, uncomment the entries to add, then deactivate that part of the code again (see line 20 for more info) ✔
