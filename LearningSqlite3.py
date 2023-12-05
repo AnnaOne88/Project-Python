@@ -80,7 +80,7 @@ def select_random_entry():
     # Close the connection
     conn.close()
 
-def delete_extra_rows():
+'''def delete_extra_rows():        #this is used to delete rows (in this case, 3+)
     # Connect to the SQLite database
     conn = sqlite3.connect('vocabulary.db')
 
@@ -94,13 +94,13 @@ def delete_extra_rows():
     conn.commit()
 
     # Close the connection
-    conn.close()
+    conn.close()'''
 
 if __name__ == "__main__":
-    create_database_with_data()
+    create_database_with_data() #I guess we can also remove this call function after the first run.
     print_database()
 
-    delete_extra_rows()
+    #delete_extra_rows()
 
     print()
     select_random_entry()
