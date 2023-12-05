@@ -13,3 +13,5 @@
 ### 11. After 'What is XY in Chinese?', we should reverse the format to 'What is XY in English'. Do 5 revisions into each language, randomly selected from the dictionary keys/values respectively.
 ### 12. Do some testing: add to the XLS one line with only EN word, and one line with only ZH word. Run to see what happens.
 ### 13. modify LearningSQlite3.py: the script now creates a database and adds 3 words. CAREFUL: the first time you run this, uncomment the entries to add, then deactivate that part of the code again (see line 20 for more info) ✔
+### 14. Created two scripts that create a table + add entries.  ✔
+### 15. Find a way to add entries to vocabulary.db from our external file with vocabulary (vocabulary-list-extended.xls).
