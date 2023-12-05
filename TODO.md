@@ -14,4 +14,5 @@
 ### 12. Do some testing: add to the XLS one line with only EN word, and one line with only ZH word. Run to see what happens.
 ### 13. modify LearningSQlite3.py: the script now creates a database and adds 3 words. CAREFUL: the first time you run this, uncomment the entries to add, then deactivate that part of the code again (see line 20 for more info) ✔
 ### 14. Created two scripts that create a table + add entries.  ✔
-### 15. Find a way to add entries to vocabulary.db from our external file with vocabulary (vocabulary-list-extended.xls).
+### 15. Find a way to add entries to vocabulary.db from our external file with vocabulary (vocabulary-list-extended.xls). ✔
+### 16. Finish the revision program. Update LearningVocabulary_XLS_more_entries.py: After running the CREATETABLE and ADDDATA scripts, this third script should only work with the existing table and fetch random vocabularies from there.
